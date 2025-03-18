@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Game demo of PIP: Plantary Interstellar Pioneer.">
+    <meta name="author" content="Bandinopla + Bullzara">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="P.I.P. Skull Demo">
+    <meta property="og:url" content="https://cdn.jsdelivr.net/gh/bandinopla/pip-skull-demo@main">
+    <meta property="og:image" content="https://cdn.jsdelivr.net/gh/bandinopla/pip-skull-demo@main/screenshot.png">
+    <meta property="og:description" content="Ayudá a Kukita a enfrentarse a un astronauta gigánte esquelético que está interfiriendo son su misión interplanetaria. ">
+
+    <meta property="og:video" content="https://cdn.jsdelivr.net/gh/bandinopla/pip-skull-demo@main/trailer.mp4">
+    <meta property="og:video:type" content="video/mp4">
+    <meta property="og:video:width" content="1920">
+    <meta property="og:video:height" content="1080">
+ 
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/bandinopla/pip-skull-demo@main/screenshot.png"> 
+
+
+    <title>PIP : Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&display=swap" rel="stylesheet">
+    <link href="/preview-atlas.css" rel="stylesheet">
+    <style>
+        .hide {
+            display: none;
+        }
+
+        html,
+        body {
+            padding: 0px;
+            margin: 0px;
+            color: white;
+            background-color: black;
+        }
+
+        #loading-screen {
+            position: fixed;
+            background-color: black;
+            z-index: 999;
+            width: 100vw;
+            height: 100vh;
+            color: white;
+            display: flex;
+            justify-content: center;
+            /* Horizontally center */
+            align-items: center;
+            /* Vertically center */
+        }
+
+        #loading-screen>div {
+            transform-origin: center;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HJP79TFSJ"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-5HJP79TFSJ');
+    </script>
+
+  <script type="module" crossorigin src="/assets/index-DyriG1yF.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-D0WqW_Di.css">
+</head>
+
+<body>
+    <div class="credits hide" id="credits-screen">
+
+        <div>
+            <div class="A"></div>
+            <div class="content">
+                <div>
+                    <div>
+                        <img src="/logo.png" width="100" />
+                    </div>
+                    <div>
+                        <h1>Creado por</h1>
+                        <p>Bandinopla</p>
+                        <div class="mb20">
+                            <a href="https://www.youtube.com/@bandinopla" target="_blank">Youtube</a> |
+                            <a href="https://x.com/bandinopla" target="_blank">x.com</a>
+                        </div><br />
+                        <p>Bullzara</p>
+                        <div class="mb20">
+                            <a href="https://www.youtube.com/@bullzara" target="_blank">Youtube</a>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1>Character Design</h1>
+                        <div class="rows font-small">
+                            <div>Main character <a href="https://www.youtube.com/@bullzara" target="_blank">Bullzara</a>
+                            </div>
+                            <div>Skeleton Boss <a href="https://x.com/bandinopla" target="_blank">Bandinopla</a></div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1>Director</h1>
+                        <p>Bandinopla</p>
+                    </div>
+                    <div>
+                        <h1>Diseño de Juego</h1>
+                        <p>Bandinopla</p>
+                    </div>
+                    <div>
+                        <h1>Programador</h1>
+                        <p>Bandinopla</p>
+                    </div>
+
+                    <div>
+                        <h1>Beta Testers</h1>
+                        <p>....?????</p>
+                    </div>
+
+                    <div>
+                        <h1>Asistentes</h1>
+                        <div style="line-height: 1.4em;">
+                            <p><a href="https://gemini.google.com" target="_blank">Gemini</a></p>
+                            <p><a href="https://chatgpt.com/" target="_blank">ChatGPT</a></p>
+                            <p><a href="https://chat.deepseek.com/" target="_blank">DeepSeek</a></p>
+                            <p><a href="https://github.com/features/copilot" target="_blank">Copilot</a></p>
+                            <p><a href="https://x.com/i/grok" target="_blank">Grok</a></p>
+                            <p><a href="https://www.meta.ai/" target="_blank">Meta</a></p>
+                            <p></p>
+                        </div>
+                    </div>
+                    <div>
+                        <h1>3D Engine</h1>
+                        <p><a href="https://threejs.org/" target="_blank">Three.js</a></p>
+                    </div>
+                    <div>
+                        <h1>3D Physics Engine</h1>
+                        <p><a href="https://pmndrs.github.io/cannon-es/" target="_blank">CANNON-es</a></p>
+                    </div>
+
+                    <div>
+                        <h1>Artista 3D</h1>
+                        <p>Bandinopla</p>
+                    </div>
+
+                    <div>
+                        <h1>Artista Técnico</h1>
+                        <p>Bandinopla</p>
+                    </div>
+
+                    <div>
+                        <h1>Recursos 3D ajenos</h1>
+                        <div class="rows  font-small">
+                            <div>Downloaded from <a href="https://sketchfab.com/" target="_blank">Sketchfab</a></div>
+                            <div>Embeded Rock Skull by <a href="https://sketchfab.com/bumstrum"
+                                    target="_blank">DJMaesen</a></div>
+                            <div>Power Drill Body by <a href="https://sketchfab.com/Chelmoses" target="_blank">Chelsea
+                                    Moses</a></div>
+                            <div>USSR Power Drill Head by <a href="https://sketchfab.com/gurkha"
+                                    target="_blank">Gurkha</a></div>
+                            <div>Rocks Texture by <a href="https://www.artstation.com/chrisg4919"
+                                    target="_blank">Christian Gomm</a></div>
+                            <div>Rocks Base Mesh by <a href="https://www.artstation.com/ben-delamore"
+                                    target="_blank">Ben Delamore</a> </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1>Shaders</h1>
+                        <div class="rows font-small">
+                            <div>VHS Distortion by <a href="https://www.shadertoy.com/user/Gaktan"
+                                    target="_blank">Gaktan</a></div>
+                            <div>Sharpen based on shader by <a href="https://www.shadertoy.com/user/Nihilistic_Furry"
+                                    target="_blank">Nihilistic_Furry</a></div>
+                            <div>Shockwave based on shader by <a href="https://www.shadertoy.com/user/Darthmarshie"
+                                    target="_blank">Darthmarshie</a></div>
+                            <div>
+                                Bloom pass by <a href="http://eduperiment.com" target="_blank" rel="noopener">Prashant
+                                    Sharma</a> and <a href="https://clara.io" target="_blank" rel="noopener">Ben
+                                    Houston</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1>3D Software</h1>
+                        <p><a href="https://www.blender.org/" target="_blank">Blender</a></p>
+                    </div>
+
+                    <div>
+                        <h1>Director de audio</h1>
+                        <p>Bandinopla</p>
+                    </div>
+
+                    <div>
+                        <h1>Musica</h1>
+                        <p>Prompted by <a href="https://x.com/bandinopla">Bandinopla</a></p>
+                        <p>Credits music by <a href="https://suno.com/">Suno</a></p>
+                        <p>Menu music by <a href="https://suno.com/">Suno</a></p>
+                        <p>Level bg by <a href="https://suno.com/">Suno</a></p>
+                    </div>
+
+                    <div>
+                        <h1>Efectos de sonido</h1>
+                        <div class="rows font-xsmall">
+                            <div></div>
+                            <siv>Monster squeel by <a
+                                    href="https://pixabay.com/users/wikitwonkaweckords_llc-1562674/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=146632">James
+                                    Jules</a> </siv>
+                            <div>8bit menu sound by <a
+                                    href="https://pixabay.com/es/users/alex_jauk-16800354/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=293063">Alexander
+                                    Jauk</a> </div>
+                            <div>BigBang by <a
+                                    href="https://pixabay.com/es/users/audiopapkin-14728698/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=306981">Paweł
+                                    Spychała</a> </div>
+                            <div>Bell by <a
+                                    href="https://pixabay.com/es/users/imgmidi-22209080/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=305458">Lakshmiraman
+                                    Oza</a> </div>
+                            <div>Arcade grab by <a
+                                    href="https://pixabay.com/es/users/lucadialessandro-25927643/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=288597">Luca
+                                    Di Alessandro</a> </div>
+                            <div>Bullet time by <a
+                                    href="https://pixabay.com/es/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=294435">Universfield</a>
+                            </div>
+                            <div>Heartbeat by <a
+                                    href="https://pixabay.com/es/users/kalsstockmedia-13377274/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=282880">Kalpesh
+                                    Ajugia</a> </div>
+                            <div>Ending BG Sound by <a
+                                    href="https://pixabay.com/es/users/fronbondi_skegs-23154649/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=277420">Gavin
+                                    Mogensen</a> </div>
+                            <div>Arcade jumpSound by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=105724">freesound_community</a>
+                            </div>
+                            <div>Portal Sound by <a
+                                    href="https://pixabay.com/es/users/floraphonic-38928062/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=211685">floraphonic</a>
+                            </div>
+                            <div>Cough by <a
+                                    href="https://pixabay.com/es/users/deifandubs-33685041/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=149493">julia
+                                    alexandra porras jimenez</a> </div>
+                            <div>Funny Land by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=5987">freesound_community</a>
+                            </div>
+                            <div>Agro Laugh by <a
+                                    href="https://pixabay.com/es/users/ai_mee_universe-32355533/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=137528">Ai_mee
+                                    Universe</a> </div>
+                            <div>Gentle laugh by <a
+                                    href="https://pixabay.com/es/users/deifandubs-33685041/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=149491">julia
+                                    alexandra porras jimenez</a> </div>
+                            <div>Portal by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=14639">freesound_community</a>
+                            </div>
+                            <div>Kick stone by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=103816">freesound_community</a>
+                            </div>
+                            <div>Boss Agony by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=103816">freesound_community</a>
+                            </div>
+                            <div>Device Explosion by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=103816">freesound_community</a>
+                            </div>
+                            <div>Power charge by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6409">freesound_community</a>
+                            </div>
+                            <div>Power Drill active by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6409">freesound_community</a>
+                            </div>
+                            <div>Power Drill Drilling by <a
+                                    href="https://pixabay.com/es/users/mrbrique-8186825/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=198913">fabrice
+                                    brique</a> </div>
+                            <div>Air whoosh by <a
+                                    href="https://pixabay.com/es/users/alice_soundz-44907632/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=224073">Alice_soundz</a>
+                            </div>
+                            <div>Boss "boo" + Laugh by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6409">freesound_community</a>
+                            </div>
+                            <div>Boss Idle Sound by <a
+                                    href="https://pixabay.com/es/users/alienightmare-42489797/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=231332">Kuzu
+                                    Voorhees</a> </div>
+                            <div>Soul leaves body by <a
+                                    href="https://pixabay.com/es/users/alesiadavina-32608554/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=138135">AlesiaDavina</a>
+                            </div>
+                            <div>Die grunt by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6409">freesound_community</a>
+                            </div>
+                            <div>Stone breaks by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=6409">freesound_community</a>
+                            </div>
+                            <div>Punch woosh #1-5 by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=85990">freesound_community</a>
+                            </div>
+                            <div>Hit Swing #2 by <a
+                                    href="https://pixabay.com/es/users/jofae-2612324/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=110410">Joseph
+                                    Levesque</a> </div>
+                            <div>Hit Swing #1 by <a
+                                    href="https://pixabay.com/es/users/linhmitto-46708238/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=255625">linhmitto</a>
+                            </div>
+                            <div>Player jump land by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=85990">freesound_community</a>
+                            </div>
+                            <div>Player jump grunt by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=85990">freesound_community</a>
+                            </div>
+                            <div>Player grunt by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=85990">freesound_community</a>
+                            </div>
+                            <div>Metal hit "base" <a
+                                    href="https://pixabay.com/es/users/alex_jauk-16800354/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=221707">Alexander
+                                    Jauk</a> </div>
+                            <div>Metal hit #1 & #2 sound by <a
+                                    href="https://pixabay.com/es/users/floraphonic-38928062/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=200424">floraphonic</a>
+                            </div>
+                            <div>
+                                Meteor Impact by <a
+                                    href="https://pixabay.com/es/users/lordsonny-38439655/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=161647">LordSonny</a>
+                            </div>
+                            <div>
+                                Meteor falling by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=14766">freesound_community</a>
+                            </div>
+                            <div>Boss Pain Pain Roars by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=85304">freesound_community</a>
+                            </div>
+                            <div>
+                                Electric Shock recorded by <a href="https://www.youtube.com/watch?v=fS2y2QqLdhc"
+                                    target="_blank">Michael Wolgast</a>
+                            </div>
+                            <div>Boss Roar by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=95975">freesound_community</a>
+                            </div>
+                            <div>Rock Impact #1 by <a
+                                    href="https://pixabay.com/es/users/lordsonny-38439655/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=194553">LordSonny</a>
+                            </div>
+                            <div>Boss Scrceech by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=65012">freesound_community</a>
+                            </div>
+                            <div>Boss Shocked by <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=106445">freesound_community</a>
+                            </div>
+                            <div>Boss 1st Growl by <a
+                                    href="https://pixabay.com/es/users/derunfassbare-39005965/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=252774">Mat</a>
+                            </div>
+                            <div>Boss Intro Sound by <a
+                                    href="https://pixabay.com/es/users/lordsonny-38439655/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=162883">LordSonny</a>
+                            </div>
+                            <div>Horror Suspense <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=76349">freesound_community</a>
+                            </div>
+                            <div>Dramatic ground landing <a
+                                    href="https://pixabay.com/es/users/lordsonny-38439655/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=161648">LordSonny</a>
+                            </div>
+                            <div>Ground Landing <a
+                                    href="https://pixabay.com/es/users/lordsonny-38439655/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=194553">LordSonny</a>
+                            </div>
+                            <div>Radio Sound <a
+                                    href="https://pixabay.com/es/users/freesound_community-46691455/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=103737">freesound_community</a>
+                            </div>
+                            <div>Click Sound <a
+                                    href="https://pixabay.com/es/users/universfield-28281460/?utm_source=link-attribution&utm_medium=referral&utm_campaign=music&utm_content=117076">Universfield</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <h1>Audio Library</h1>
+                        <p><a href="https://howlerjs.com/">Howler js</a></p>
+                    </div>
+
+                    <div>
+                        <h1>Release date</h1>
+                        <p>2025.??.??</p>
+                    </div>
+
+                    <div style="height: 100vh; flex-direction: column;" class="centered-div">
+                        <h1>Gracias a vos por jugar!</h1>
+                        <p>
+                            <img src="/kukita-waving.gif" id="kukita" />
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+            <div class="B"></div>
+        </div>
+
+
+    </div>
+
+    <div id="webgl2-warning" class="hide">
+        <div>
+            <div>
+                <img src="/nowebgl.png" />
+                <h1 class="gameFont">WebGL 2.0</h1>
+                <h2>
+                    Awwww... Your browser or device doesn't support WebGL 2.0 and we need it...
+                </h2>
+                <div id="nowebgl-details"></div>
+                <hr />
+                <ul style="text-align: left;">
+                    <li>1. <strong>Update Your Browser</strong>: Use the latest version of Chrome, Firefox, Edge, or
+                        Safari (<a href="https://www.google.com/chrome/" target="_blank">download Chrome</a>).</li>
+                    <li>2. <strong>Enable WebGL 2.0</strong>: Check your browser settings (e.g., chrome://flags or
+                        about:config) and enable WebGL experimental features.</li>
+                    <li>3. <strong>Update Graphics Drivers</strong>: Visit your GPU manufacturer’s site (e.g., NVIDIA,
+                        AMD, Intel) for the latest drivers.</li>
+                    <li>4. <strong>Hardware Check</strong>: If issues persist, your device’s GPU may not support WebGL
+                        2.0—try a newer device.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div id="app-error" class="hide">
+        <div>
+            <div>
+                <img src="/nowebgl.png" />
+                <h1 class="gameFont">Oops!</h1>
+                <p>...</p>
+            </div>
+        </div>
+    </div>
+
+    <div id="about" class="hide">
+        <button class="x">⨉</button>
+        <img src="/logo.png" />
+        <div> 
+            <h1>P.I.P. es un proyecto de fantasía nacido en el año 2023, el <a href="https://bandinopla.itch.io/pionera-interestelar-planetaria" target="_blank">primer demo</a> se hizo en <a href="https://unity.com/" target="_blank">Unity</a> y en el 2025 esta demo hecha con <a href="https://threejs.org/" target="_blank">Threejs</a>.</h1>
+            <p>
+                Creado por <a href="https://x.com/bandinopla" target="_blank">Bandinopla</a> y <a href="https://www.youtube.com/@bullzara" target="_blank">Bullzara</a>.  El juego sigue la historia de "kukita" una astronauta que es abandonada en medio de su misión a Marte por negligencia administrativa del comando central interplanetario. Pero ella decide usar su ingenio para encontrar la solución y completar el camino de llegada a la base marciana, donde se encontrará que no fué la única abandonada, entre otros problemas...
+            </p>
+            <p>
+                <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/5n9dcODcoJU?si=bqjQtCzR-44YMLrv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </p>
+        </div>
+    </div>
+
+    <div id="paused-screen" class="hide">
+        <div>
+            <div>
+                <h2>--- PAUSE ---</h2>
+                <div>
+                    <a href="#" class="btnContinue">Continue</a>
+                    <a href="#" class="btnExit">Exit</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="canvas"></div>
+    <video preload="auto" id="video" style="display: none;" src="/mini-trailer.mp4" playsinline></video>
+
+
+</body>
+
+</html>
